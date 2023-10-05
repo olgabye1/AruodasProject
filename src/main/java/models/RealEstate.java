@@ -47,7 +47,7 @@ public class RealEstate {
 
     public void fill() {
         selectRegion();
-        driver.findElement(By.xpath("//*[@id=\"districtTitle\"]")).sendKeys(this.district);
+        //driver.findElement(By.xpath("//*[@id=\"districtTitle\"]")).sendKeys(this.district);
         selectQuartal();
         selectStreet();
         driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[7]/span[1]/input[2]")).sendKeys(this.type);
@@ -69,10 +69,10 @@ public class RealEstate {
         select.click();
         switch (region) {
             case "Vilnius":
-                driver.findElement(By.xpath("//*[@id=\"regionDropdown\"]/li[2]"));
+                driver.findElement(By.xpath("//*[@id=\"regionDropdown\"]/li[2]")).click();
                 break;
             case "Kaunas":
-                driver.findElement(By.xpath("//*[@id=\"regionDropdown\"]/li[3]"));
+                driver.findElement(By.xpath("//*[@id=\"regionDropdown\"]/li[3]")).click();
                 break;
         }
     }
@@ -80,10 +80,10 @@ public class RealEstate {
         driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[1]/input")).click();
         switch (quartal) {
             case "Antakalnis":
-                driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[2]"));
+                driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[2]")).click();
                 break;
             case "Antavilis":
-                driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[3]"));
+                driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[3]")).click();
                 break;
         }
     }
