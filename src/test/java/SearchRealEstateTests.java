@@ -11,7 +11,7 @@ public class SearchRealEstateTests {
     @Test
     public void positiveTest(){
         Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10#daugiau");
-        RealEstate re = new RealEstate("Vilnius","Vilniaus m.","Antakalnis", "Plytinės g.","Butai pirkti","Ieskau >80 kv.m.buto. Minimum 3 miegamieji kambariai. Naujesnės statybos","C:/Users/Olga/Desktop/lova.jpg", "https://www.youtube.com/shorts/BQz8xxZUdaw","https://www.youtube.com/watch?v=R2fDRObS6OQ","300000","61100000","olga12345@gmail.com",true, true,true);
+        RealEstate re = new RealEstate("Vilnius","Vilniau","Antakalnis", "Plytinės g.","Butai pirkti","Ieskau >80 kv.m.buto. Minimum 3 miegamieji kambariai. Naujesnės statybos","C:/Users/Olga/Desktop/lova.jpg", "https://www.youtube.com/shorts/BQz8xxZUdaw","https://www.youtube.com/watch?v=R2fDRObS6OQ","300000","61100000","olga12345@gmail.com");
         re.fill();
         //String successMsg = Helper.driver.findElement()
     }
