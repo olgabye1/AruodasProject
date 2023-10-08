@@ -59,7 +59,7 @@ public class RealEstate {
         addContacts();
         turnOffEmail();
         turnOffChat();
-        confirmrules();
+        confirmRules();
         submit();
     }
 
@@ -86,7 +86,7 @@ public void addLinks() {
     public void turnOffChat() {
     driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[24]/div/div/div/label/span")).click();
 }
-    public void confirmrules() {
+    public void confirmRules() {
     driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[25]/span[1]/div/div/label/span")).click();
 }
     public void submit() {
@@ -98,8 +98,8 @@ public void addLinks() {
     }
 
     public void uploadFile() {
-        WebElement upload_file = driver.findElement(By.id("uploadPhotoBtn"));
-        upload_file.sendKeys("C:/Users/Olga/Desktop/lova.jpg");
+        WebElement upload_file = driver.findElement(By.xpath("//*[@id=\"uploadPhotoBtn\"]/input"));
+        upload_file.sendKeys("C:/Users/Olga/Desktop/butas.jpg");
     }
 
     public void setLocation(int pos, String location) {
