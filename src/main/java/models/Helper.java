@@ -1,9 +1,11 @@
 package models;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Helper {
     public static WebDriver driver;
+    public static WebDriverWait wait;
 
     public static void acceptCookies() {
         driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10");

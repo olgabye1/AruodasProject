@@ -3,35 +3,38 @@ package models;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class RealEstate {
     public WebDriver driver;
-
+    public WebDriverWait wait;
     public String region;
     public String district;
     public String quartal;
     public String street;
-    public String type;
     public String description;
     public String photo;
     public String link;
     public String link3D;
-
     public String price;
     public String phone;
     public String email;
     public boolean checkEmail;
     public boolean checkChat;
     public boolean checkRules;
+    public String plotNumber;
+    public String rcNumber;
+    public String area;
+    public String purpose;
 
-    public RealEstate(String region, String district, String quartal, String street, String type, String description, String photo, String link, String link3D, String price, String phone, String email) {
+
+    public RealEstate(String region, String district, String quartal, String street, String description, String photo, String link, String link3D, String price, String phone, String email) {
         this.region = region.toLowerCase();
         this.district = district.toLowerCase();
         this.quartal = quartal.toLowerCase();
         this.street = street.toLowerCase();
-        this.type = type;
         this.description = description;
         this.photo = photo;
         this.link = link;
@@ -43,7 +46,9 @@ public class RealEstate {
         this.checkChat = checkChat;
         this.checkRules = checkRules;
         this.driver = Helper.driver;
+        this.wait = Helper.wait;
     }
+
 
     public void fill() {
         Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10");
@@ -51,7 +56,6 @@ public class RealEstate {
         setLocation(1, district);
         setLocation(2, quartal);
         setLocation(3, street);
-        objectType();
         description();
         uploadFile();
         addLinks();
@@ -63,11 +67,6 @@ public class RealEstate {
         submit();
     }
 
-
-    public void objectType() {
-        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[7]/span[1]")).click();
-        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[7]/span[1]/ul/li[1]")).click();
-    }
 public void addLinks() {
     driver.findElement(By.name("Video")).sendKeys(this.link);
     driver.findElement(By.name("tour_3d")).sendKeys(this.link3D);
@@ -128,6 +127,9 @@ public void addLinks() {
             }
         } catch (Exception e) {
         }
+    }
+
+    protected void fillAdvertForm() {
     }
 
     //public void selectRegion() {
